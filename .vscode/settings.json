@@ -1,0 +1,3 @@
+{
+    "dotnet.defaultSolution": "TestApp.Api/TestApp.Api.sln"
+}

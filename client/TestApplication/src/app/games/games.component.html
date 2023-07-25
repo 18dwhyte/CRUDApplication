@@ -1,0 +1,124 @@
+
+<div class="body">
+
+<form #game = ngForm method="post" (ngSubmit)="addGame(game.value)">
+    <label> Name </label>
+    <input type = "text" name = "name" ngModel>
+  <br>
+    <label> Genre </label>
+    <input type = "text" name = "genre" ngModel>
+  <br>
+    <label> Price  </label>
+    <input type = "text" name = "price" ngModel>
+  <br>
+    <label> Release Date  </label>
+    <input type="date" name = "releasedate" ngModel>
+  <br>
+  <button type="submit">
+    Post
+  </button>
+</form>
+
+
+<form #deletion = ngForm (ngSubmit)="deleteGame(deletion.value)">
+  <label> ID </label>
+  <input type = "text" name = "id" ngModel>
+<button type="submit">
+  Delete
+</button>
+</form>
+
+
+<form #update = ngForm (ngSubmit)="updateGame(update.value)">
+  <label> ID </label>
+  <input type = "text" name = "id" ngModel>
+<br>
+  <label> Name </label>
+  <input type = "text" name = "name" ngModel>
+<br>
+  <label> Genre </label>
+  <input type = "text" name = "genre" ngModel>
+<br>
+  <label> Price  </label>
+  <input type = "text" name = "price" ngModel>
+<br>
+  <label> Release Date  </label>
+  <input type="date" name = "releasedate" ngModel>
+<br>
+<button type="submit">
+  Put
+</button>
+</form>
+<fieldset>
+<table>
+<thead>
+  <tr>
+   <th>ID</th>
+   <th>Name</th>
+   <th>Genre</th>
+   <th>Price</th>
+   <th>Release Date</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of Games">
+    <th>
+      {{item.id}}
+    </th>
+    <td>
+      {{item.name}}
+    </td>
+    <td>
+      {{item.genre}}
+    </td>
+    <td>
+      {{item.price}}
+    </td>
+    <td>
+      {{item.releaseDate}}
+    </td>
+  </tr>
+</tbody>
+</table>
+</fieldset>
+
+<form #get = ngForm (ngSubmit)="getGame(get.value)">
+  <label> ID </label>
+  <input type = "text" name = "id" ngModel>
+<button type="submit">
+  Get
+</button>
+<table>
+  <thead>
+    <tr>
+     <th>ID</th>
+     <th>Name</th>
+     <th>Genre</th>
+     <th>Price</th>
+     <th>Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        {{singleGame.id}}
+      </th>
+      <td>
+        {{singleGame.name}}
+      </td>
+      <td>
+        {{singleGame.genre}}
+      </td>
+      <td>
+        {{singleGame.price}}
+      </td>
+      <td>
+        {{singleGame.releaseDate}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</form>
+</div>
+
